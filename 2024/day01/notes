@@ -1,0 +1,7 @@
+1. Make each container a multi map so that they have count() method.
+
+The final equation is:
+
+totalSum = 0
+for each unique key in LeftCol:
+  totalSum += key * numOfKeyInRight * numOfKeyInLeft
