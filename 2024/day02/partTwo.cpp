@@ -47,7 +47,7 @@ bool isReportSafe(const std::vector<int> &report) {
 
 int main() {
   std::vector<std::vector<int>> integers2D;
-  extractIntegersFromFile("../data/reports.txt", integers2D);
+  extractIntegersFromFile("../data/report.txt", integers2D);
 
   int numOfSafeReports{0};
 
@@ -76,5 +76,3 @@ int main() {
 
   return 0;
 }
-
-
