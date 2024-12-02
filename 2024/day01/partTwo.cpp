@@ -9,6 +9,14 @@ int main() {
   extractIntegersFromFile("../data/input.txt", integers2D);
   auto transposedInts2D = transpose(integers2D);
 
+  /***
+   * 1. Make each container a multi map so that they have count() method.
+   * The final equation is:
+   * totalSum = 0
+   * for each unique key in LeftCol:
+   * totalSum += key * numOfKeyInRight * numOfKeyInLeft
+   ***/
+
   std::unordered_multiset<int> leftCol(transposedInts2D[0].begin(),
                                        transposedInts2D[0].end());
   std::unordered_set<int> leftColUnique(transposedInts2D[0].begin(),
