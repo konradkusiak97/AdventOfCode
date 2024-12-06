@@ -5,6 +5,21 @@
 #include <string>
 #include <vector>
 
+std::vector<std::vector<char>>
+extractLinesFromFile(const std::string &fileToOpen) {
+  std::fstream myfile(fileToOpen);
+  if (!myfile.is_open()) {
+    throw("Error while opening the file!");
+  }
+  std::string line;
+  std::vector<std::vector<char>> outputLines;
+  while (getline(myfile, line)) {
+    outputLines.push_back({line.begin(), line.end()});
+  }
+  myfile.close();
+  return outputLines;
+}
+
 std::optional<std::smatch> findMatch(const std::string &text,
                                      const std::regex &pattern) {
   std::smatch match;
